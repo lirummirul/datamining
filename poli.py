@@ -26,9 +26,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 degree = 2  # Степень полинома
 poly_features = PolynomialFeatures(degree=degree)
 X_poly = poly_features.fit_transform(X)
-
 X_test_poly = poly_features.transform(X_test)
-# X_test = data[independent_variables]
 
 model = LinearRegression()
 model.fit(X_poly, y)

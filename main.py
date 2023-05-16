@@ -1,13 +1,9 @@
 import pandas as pd
-import numpy as np
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_squared_error, r2_score
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.svm import SVR
 
 # Загрузка csv файла
 data = pd.read_csv('dataset.csv')
@@ -26,8 +22,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 # Создание и обучение модели линейной регрессии
 model = LinearRegression()
 model.fit(X_train, y_train)
-# line_reg_score = r2_score(X_test, y_train)
-# print('Что-то, что у Али: ', line_reg_score)
 
 # Прогнозирование на тестовых данных
 y_pred = model.predict(X_test)
